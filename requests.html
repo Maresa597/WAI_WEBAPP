@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Requests - WAI</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="logo-wrap" href="/admin/dashboard.html">
+    <img src="/img/wai-logo-transparent.png" alt="WAI Logo">
+    <span class="brand-title">Owner Panel</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="/admin/dashboard.html">Dashboard</a>
+    <a href="/admin/users.html">Users</a>
+    <a href="/admin/requests.html">Requests</a>
+    <button class="btn btn-danger" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+
+  <main class="page">
+    <div class="page-header">
+      <h1>Manage Service Requests</h1>
+      <p>
+        Realistic request handling with status, planning and admin notes.
+      </p>
+    </div>
+
+    <div class="toolbar">
+      <div>
+        <label>Search</label>
+        <input
+          type="text"
+          id="requestSearch"
+          placeholder="Search by customer, service or district..."
+        >
+      </div>
+
+      <div>
+        <label>Filter status</label>
+        <select id="requestStatusFilter">
+          <option value="all">All statuses</option>
+          <option value="pending">pending</option>
+          <option value="approved">approved</option>
+          <option value="in_progress">in_progress</option>
+          <option value="completed">completed</option>
+          <option value="cancelled">cancelled</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Filter district</label>
+        <select id="requestDistrictFilter">
+          <option value="all">All districts</option>
+          <option value="Paramaribo">Paramaribo</option>
+          <option value="Wanica">Wanica</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="request-layout">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Customer</th>
+              <th>District</th>
+              <th>Service</th>
+              <th>Preferred date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="adminRequests"></tbody>
+        </table>
+      </div>
+
+      <div class="card request-detail">
+        <h2>Selected Request</h2>
+
+        <div id="requestDetail">
+          <p class="small-text">
+            Select a request from the table to manage it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    WAI - Water Adaptive Intelligence | Smart Water For A Resilient Suriname
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

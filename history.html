@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>History - WAI</title>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="logo-wrap" href="/user/dashboard.html">
+    <img src="/img/wai-logo-transparent.png" alt="WAI Logo">
+    <span class="brand-title">User Dashboard</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="/user/dashboard.html">Dashboard</a>
+    <a href="/user/history.html">History</a>
+    <a href="/user/services.html">Services</a>
+    <button class="btn btn-danger" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+
+  <main class="page">
+    <div class="page-header">
+      <h1>Water Level History</h1>
+    </div>
+
+    <div class="card chart-card">
+      <canvas id="waterChart"></canvas>
+    </div>
+
+    <div class="table-wrap" style="margin-top:20px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Water level</th>
+            <th>Percentage</th>
+            <th>Daily usage</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="waterHistory"></tbody>
+      </table>
+    </div>
+
+    <div class="page-header" style="margin-top:30px;">
+      <h1>Energy History</h1>
+    </div>
+
+    <div class="card chart-card">
+      <canvas id="energyChart"></canvas>
+    </div>
+
+    <div class="table-wrap" style="margin-top:20px;">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Generated energy</th>
+            <th>Battery</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="energyHistory"></tbody>
+      </table>
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    WAI - Water Adaptive Intelligence | Smart Water For A Resilient Suriname
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/user.js"></script>
+</body>
+</html>

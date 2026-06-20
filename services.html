@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - WAI</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a class="logo-wrap" href="dashboard.html">
+    <img src="../img/wai-logo-transparent.png" alt="WAI Logo">
+    <span class="brand-title"> Dashboard</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="history.html">History</a>
+    <a href="services.html">Services</a>
+    <button class="btn btn-danger" onclick="logout()">Log out</button>
+  </div>
+
+</nav>
+
+<main class="page">
+
+  <div class="grid grid-2">
+
+    <div class="card">
+      <h3>Request Service</h3>
+
+      <form id="serviceForm">
+
+        <label for="service_id">Service</label>
+        <select id="service_id"></select>
+
+        <label for="preferred_date"> Date</label>
+        <input type="date" id="preferred_date">
+
+        <label for="description">Description</label>
+        <textarea
+                id="description"
+                placeholder="Explain what problem(s) you are experiencing..."
+        ></textarea>
+
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+
+      </form>
+
+      <div id="serviceMessage" class="message"></div>
+    </div>
+
+    <div class="card">
+      <h3>Available Services</h3>
+
+      <div class="service-list">
+
+        <div class="service-item">
+          <h3> Water Tank Cleaning</h3>
+          <p>Professional cleaning to maintain water quality.</p>
+        </div>
+
+        <div class="service-item">
+          <h3> Water Filter Replacement</h3>
+          <p>Replacement of worn water filters.</p>
+        </div>
+
+        <div class="service-item">
+          <h3> Sensor Check</h3>
+          <p>Checks and monitors sensors.</p>
+        </div>
+
+        <div class="service-item">
+          <h3> Technical Support</h3>
+          <p>Help with system errors and troubleshooting.</p>
+        </div>
+
+        <div class="service-item">
+          <h3> System Maintenance</h3>
+          <p>General inspection and maintenance.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-header" style="margin-top:30px;">
+    <h1>My Service Requests</h1>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+      <tr>
+        <th>Service</th>
+        <th>Request Date</th>
+        <th>Preferred Date</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+      </thead>
+
+      <tbody id="requests">
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/user.js"></script>
+
+</body>
+</html>
